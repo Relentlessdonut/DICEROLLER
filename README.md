@@ -35,9 +35,10 @@ You can roll 2 dice (or more) at the same time!
  Project Structure
 
 DiceRoll-Game
-├── index.html
-├── styles.css
-├── index.js
+  index.html
+  styles.css
+  index.js
+  
  dice_images
  dice1.jpg
  dice2.jpg
