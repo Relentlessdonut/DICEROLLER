@@ -42,4 +42,12 @@ input{
 #diceImages img{
     width: 80px;
     margin:5px;
+    animation: shake 0.3 ease;
+}
+@keyframes shake{
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(10deg);}
+    50%{transform: rotate(-10);}
+    75%{transform: rotate(10deg);}
+    100%{transform: rotate(0deg);}
 }
