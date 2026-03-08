@@ -5,8 +5,11 @@ function rollDice(){
     const numofDice = document.getElementById("numOfDice").value;
     const diceResult = document.getElementById("diceResult");
     const diceImages = document.getElementById("diceImages");
+
     const values = [];
     const images = [];
+    
+    diceImages.innerHTML ="Rolling...";
 
     for(let i = 0; i <numofDice; i++){
         const value =Math.floor(Math.random() * 6) + 1;
@@ -16,4 +19,4 @@ function rollDice(){
 
     diceResult.textContent = `dice ${values.join(', ')}`;
     diceImages.innerHTML = images.join('');
-}
+    }
