@@ -4,6 +4,8 @@ const stats = [0,0,0,0,0,0];
 
 let rollCount = 0;
 
+let totalDicedRolled = 0;
+
 function rollDice(){
 
     rollCount++;
@@ -22,6 +24,10 @@ function rollDice(){
 
     const maxStat = Math.max(...stats,1);
 
+    const percentages =stats.map(stat =>
+        ((stat / totalDicedRolled) * 100).toFixed(1)
+    );
+
     for(let i = 0; i < stats.length; i++){
 
         const barHeight = (stats[i] / maxStat) * maxHeight;
@@ -32,7 +38,7 @@ function rollDice(){
         ctx.fillStyle = "black";
         ctx.fillText(i+1, i * 60 + 40, 195);
 
-        ctx.fillText(stats[i], i * 60 + 40, 170 - barHeight);
+        ctx.fillText(stats[i] + " (" + percentages[i] + "%)", i * 60 + 15, 170 - barHeight);
     }
      }
     const numOfDice = document.getElementById("numOfDice").value;
@@ -46,6 +52,7 @@ function rollDice(){
 
     for(let i = 0; i <numOfDice; i++){
         const value =Math.floor(Math.random() * 6) + 1;
+        totalDicedRolled++;
         values.push(value);
         stats[value - 1]++;
         images.push(`<img src="dice_images/dice${value}.png" alt="Dice ${value}">`);
