@@ -1,7 +1,14 @@
 //DICE ROLLER PROGRAM
 
 const stats = [0,0,0,0,0,0]; 
+
+let rollCount = 0;
+
 function rollDice(){
+
+    rollCount++;
+
+    document.getElementById("rollCount").textContent = "Rolls: " + rollCount;
 
     function drawChart(){
 
@@ -28,7 +35,7 @@ function rollDice(){
         ctx.fillText(stats[i], i * 60 + 40, 170 - barHeight);
     }
      }
-    const numofDice = document.getElementById("numOfDice").value;
+    const numOfDice = document.getElementById("numOfDice").value;
     const diceResult = document.getElementById("diceResult");
     const diceImages = document.getElementById("diceImages");
 
