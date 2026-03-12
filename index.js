@@ -13,11 +13,15 @@ function rollDice(){
     document.getElementById("rollCount").textContent = "Rolls: " + rollCount;
 
     function drawChart(){
-
+     
     const canvas = document.getElementById("statsChart");
     const ctx = canvas.getContext("2d");
 
     ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.beginPath();
+    ctx.moveTo(10,180);
+    ctx.lineTo(380,180);
+    ctx.stroke();
 
     const barWidth = 50;
     const maxHeight = 150;
@@ -32,7 +36,8 @@ function rollDice(){
 
         const barHeight = (stats[i] / maxStat) * maxHeight;
 
-        ctx.fillStyle = "steelblue";
+        const colors = ["#ff595e","#ffca3a","#8ac926","#1982c4","#6a4c93","#ff924c"];
+        ctx.fillStyle = colors[i];
         ctx.fillRect(i * 60 + 20, 180 - barHeight, barWidth, barHeight);
 
         ctx.fillStyle = "black";
