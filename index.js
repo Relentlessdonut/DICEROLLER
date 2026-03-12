@@ -51,7 +51,7 @@ function rollDice(){
         images.push(`<img src="dice_images/dice${value}.png" alt="Dice ${value}">`);
     }
 
-    diceResult.textContent = `dice ${values.join(', ')}`;
+    diceResult.textContent = `You rolled: ${values.join(', ')}`;
     diceImages.innerHTML = images.join('');
 
     drawChart();
