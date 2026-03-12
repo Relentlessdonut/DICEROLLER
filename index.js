@@ -44,7 +44,7 @@ function rollDice(){
     
     diceImages.innerHTML ="Rolling...";
 
-    for(let i = 0; i <numofDice; i++){
+    for(let i = 0; i <numOfDice; i++){
         const value =Math.floor(Math.random() * 6) + 1;
         values.push(value);
         stats[value - 1]++;
