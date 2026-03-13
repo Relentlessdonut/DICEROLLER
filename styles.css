@@ -4,6 +4,8 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
+    flex-direction: column;
+    padding-bottom: 80px;
 }
 .dice-background{
     position: fixed;
@@ -39,6 +41,7 @@ body{
     border-radius: 15px;
     width: 400px;
     margin: auto;
+    margin-bottom: 60px;
     box-shadow: 0px 10px 25px rgba(0,0,0,0,2);
     backdrop-filter: blur(10px);
 }
@@ -54,6 +57,8 @@ button{
 }
 button:hover{
     background-color: hsl(211, 41%, 42%);
+    box-shadow: 0px 0px 15px rgba(255,255,255,0.6);
+    transform: scale(1.05);
 }
 button:active{
     background-color: hsl(211, 73%, 66%);
@@ -74,6 +79,29 @@ input{
     width: 80px;
     margin:5px;
     animation: shake 0.5s ease;
+    transition: transform 0.2s; filter: 0.2s;
+}
+#diceImages img:hover{
+    transform: scale(1.5);
+    filter: drop-shadow(0px 0px 10px gold);
+}
+footer{
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width:100%;
+    text-align:center;
+    color:white;
+    font-size:1.4rem;
+    padding: 10px 0;
+    opacity:0.7;
+    z-index: 20;
+    text-shadow:
+    0 0 5px white,
+    0 0 10px white,
+    0 0 20px #60a5fa,
+    0 0 40px #1e3a8a;
+    animation: glow 2s ease-in-out infinite alternate;
 }
 @keyframes shake{
     0%{transform: rotate(0deg);}
@@ -89,4 +117,18 @@ input{
     100%{
         transform: translateY(-10vh) rotate(360deg);
     }
+}
+@keyframes glow{
+    from{
+    text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #60a5fa;
+}
+to{
+    text-shadow:
+    0 0 10px #fff,
+    0 0 20px #60a5fa,
+    0 0 40px #1e3a8a;
+}
 }
