@@ -58,7 +58,7 @@ button{
 button:hover{
     background-color: hsl(211, 41%, 42%);
     box-shadow: 0px 0px 15px rgba(255,255,255,0.6);
-    transform: scale(1.05);
+    transform: scale(1.06);
 }
 button:active{
     background-color: hsl(211, 73%, 66%);
